@@ -14,7 +14,7 @@ public class Door : MonoBehaviour
     void Start()
     {
         closedRotation = transform.rotation;
-        openRotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0, openAngle, 0));
+        openRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
     }
 
     void Update()

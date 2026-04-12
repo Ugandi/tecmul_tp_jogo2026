@@ -8,18 +8,19 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Ray ray = new Ray(transform.position, transform.forward);
+            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, range))
+            if (Physics.Raycast(ray, out hit, 5f))
             {
-                Door door = hit.collider.GetComponent<Door>();
+                Door door = hit.collider.GetComponentInParent<Door>();
 
                 if (door != null)
                 {
                     door.Interact();
                 }
             }
+
         }
     }
 }
