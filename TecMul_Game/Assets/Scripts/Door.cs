@@ -1,47 +1,47 @@
 using UnityEngine;
+using TMPro;
 
 public class Door : MonoBehaviour
 {
     public bool isLocked = true;
-    public bool isOpen = false;
+    public string requiredKeyID = "door_01_key"; // ID único por porta
+    public TextMeshProUGUI lockedMessage;         // Arrasta o texto UI aqui
 
-    public float openAngle = 90f;
-    public float speed = 2f;
+    private Coroutine hideCoroutine;
 
-    private Quaternion closedRotation;
-    private Quaternion openRotation;
-
-    void Start()
-    {
-        closedRotation = transform.rotation;
-        openRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
-    }
-
-    void Update()
-    {
-        if (isOpen)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, openRotation, Time.deltaTime * speed);
-        }
-        else
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, closedRotation, Time.deltaTime * speed);
-        }
-    }
-
-    public void Interact()
+    public void TryOpen()
     {
         if (isLocked)
         {
-            Debug.Log("A porta está trancada!");
-            return;
+            ShowMessage("Locked");
         }
-
-        isOpen = !isOpen;
+        else
+        {
+            Open();
+        }
     }
 
     public void Unlock()
     {
         isLocked = false;
+    }
+
+    private void Open()
+    {
+        
+    }
+
+    private void ShowMessage(string message)
+    {
+        if (hideCoroutine != null) StopCoroutine(hideCoroutine);
+        lockedMessage.text = message;
+        lockedMessage.gameObject.SetActive(true);
+        hideCoroutine = StartCoroutine(HideAfterDelay(2f));
+    }
+
+    private System.Collections.IEnumerator HideAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        lockedMessage.gameObject.SetActive(false);
     }
 }
