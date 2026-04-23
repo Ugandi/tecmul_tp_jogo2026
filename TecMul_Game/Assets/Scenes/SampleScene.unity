@@ -1265,7 +1265,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2015746837}
     m_Modifications:
     - target: {fileID: 126568, guid: bbe3e65d308bf7b4bba358ca68dac3f9, type: 3}
       propertyPath: m_Name
@@ -1273,15 +1273,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458786, guid: bbe3e65d308bf7b4bba358ca68dac3f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.252
+      value: -2.28156
       objectReference: {fileID: 0}
     - target: {fileID: 458786, guid: bbe3e65d308bf7b4bba358ca68dac3f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.18
+      value: -5.9377604
       objectReference: {fileID: 0}
     - target: {fileID: 458786, guid: bbe3e65d308bf7b4bba358ca68dac3f9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 159.72
+      value: -20.685364
       objectReference: {fileID: 0}
     - target: {fileID: 458786, guid: bbe3e65d308bf7b4bba358ca68dac3f9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7346,8 +7346,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 751472269}
+  openAngle: 90
 --- !u!4 &260235331
 Transform:
   m_ObjectHideFlags: 0
@@ -19450,8 +19452,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 751472269}
+  openAngle: 90
 --- !u!4 &698355998
 Transform:
   m_ObjectHideFlags: 0
@@ -26107,8 +26111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 751472269}
+  openAngle: 90
 --- !u!4 &895428966
 Transform:
   m_ObjectHideFlags: 0
@@ -29479,8 +29485,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 751472269}
+  openAngle: 90
 --- !u!4 &1030735432
 Transform:
   m_ObjectHideFlags: 0
@@ -31341,8 +31349,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 751472269}
+  openAngle: 90
 --- !u!4 &1114562308
 Transform:
   m_ObjectHideFlags: 0
@@ -43066,8 +43076,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 751472269}
+  openAngle: 90
 --- !u!4 &1551282522
 Transform:
   m_ObjectHideFlags: 0
@@ -47489,8 +47501,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 751472269}
+  openAngle: 90
 --- !u!4 &1682204332
 Transform:
   m_ObjectHideFlags: 0
@@ -51324,8 +51338,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 1
+  isOpen: 0
   requiredKeyID: door_01_key
   lockedMessage: {fileID: 751472269}
+  openAngle: 90
 --- !u!4 &1805083253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 438830, guid: 5f0de5ff8858bdd408bd91760c8c70da, type: 3}
@@ -52339,8 +52355,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 751472269}
+  openAngle: 90
 --- !u!4 &1846188297
 Transform:
   m_ObjectHideFlags: 0
@@ -54623,8 +54641,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 751472269}
+  openAngle: 90
 --- !u!4 &1930454534
 Transform:
   m_ObjectHideFlags: 0
@@ -54823,8 +54843,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 0}
+  openAngle: 90
 --- !u!1001 &1935145836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56323,8 +56345,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 751472269}
+  openAngle: 90
 --- !u!4 &1988953350
 Transform:
   m_ObjectHideFlags: 0
@@ -56791,8 +56815,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 0
+  isOpen: 0
   requiredKeyID: 
   lockedMessage: {fileID: 0}
+  openAngle: 90
 --- !u!1001 &2015587729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56918,6 +56944,7 @@ Transform:
   - {fileID: 1480156023}
   - {fileID: 1557369723}
   - {fileID: 1292793617}
+  - {fileID: 2104605172}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2017876176
@@ -58860,6 +58887,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
+--- !u!4 &2104605172 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 458786, guid: bbe3e65d308bf7b4bba358ca68dac3f9, type: 3}
+  m_PrefabInstance: {fileID: 46112986}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2107274693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59965,4 +59997,3 @@ SceneRoots:
   - {fileID: 516870808}
   - {fileID: 2015746837}
   - {fileID: 116825937}
-  - {fileID: 46112986}
