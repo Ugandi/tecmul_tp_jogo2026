@@ -4,8 +4,10 @@ using TMPro;
 public class Door : MonoBehaviour
 {
     public bool isLocked = true;
-    public string requiredKeyID = "door_01_key"; // ID único por porta
-    public TextMeshProUGUI lockedMessage;         // Arrasta o texto UI aqui
+    public bool isOpen = false;
+    public string requiredKeyID = "door_01_key";
+    public TextMeshProUGUI lockedMessage;
+    public float openAngle = 90f;
 
     private Coroutine hideCoroutine;
 
@@ -17,18 +19,18 @@ public class Door : MonoBehaviour
         }
         else
         {
-            Open();
+            if (isOpen)
+                StartCoroutine(DoorAnimation(openAngle, 0f));
+            else
+                StartCoroutine(DoorAnimation(0f, openAngle));
+
+            isOpen = !isOpen;
         }
     }
 
     public void Unlock()
     {
         isLocked = false;
-    }
-
-    private void Open()
-    {
-        StartCoroutine(OpenAnimation());
     }
 
     private void ShowMessage(string message)
@@ -45,10 +47,10 @@ public class Door : MonoBehaviour
         lockedMessage.gameObject.SetActive(false);
     }
 
-    private System.Collections.IEnumerator OpenAnimation()
+    private System.Collections.IEnumerator DoorAnimation(float fromAngle, float toAngle)
     {
         Quaternion startRotation = transform.localRotation;
-        Quaternion endRotation = startRotation * Quaternion.Euler(0, 90f, 0);
+        Quaternion endRotation = startRotation * Quaternion.Euler(0, toAngle - fromAngle, 0);
         float duration = 1f;
         float elapsed = 0f;
 
