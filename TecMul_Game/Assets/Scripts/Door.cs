@@ -47,18 +47,18 @@ public class Door : MonoBehaviour
 
     private System.Collections.IEnumerator OpenAnimation()
     {
-        Quaternion startRotation = transform.rotation;
-        Quaternion endRotation = Quaternion.Euler(0, 90, 0);
+        Quaternion startRotation = transform.localRotation;
+        Quaternion endRotation = startRotation * Quaternion.Euler(0, 90f, 0);
         float duration = 1f;
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            transform.rotation = Quaternion.Lerp(startRotation, endRotation, elapsed / duration);
+            transform.localRotation = Quaternion.Lerp(startRotation, endRotation, elapsed / duration);
             yield return null;
         }
 
-        transform.rotation = endRotation;
+        transform.localRotation = endRotation;
     }
 }
