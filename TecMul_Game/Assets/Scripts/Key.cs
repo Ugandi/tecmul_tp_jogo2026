@@ -9,7 +9,7 @@ public class Key : MonoBehaviour
         if (targetDoor.requiredKeyID == keyID)
         {
             targetDoor.Unlock();
-            Destroy(gameObject); // Remove a chave do mundo
+            Destroy(gameObject);
         }
     }
 }

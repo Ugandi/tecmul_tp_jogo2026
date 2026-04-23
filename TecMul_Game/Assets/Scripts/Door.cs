@@ -28,7 +28,7 @@ public class Door : MonoBehaviour
 
     private void Open()
     {
-        
+        StartCoroutine(OpenAnimation());
     }
 
     private void ShowMessage(string message)
@@ -43,5 +43,22 @@ public class Door : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         lockedMessage.gameObject.SetActive(false);
+    }
+
+    private System.Collections.IEnumerator OpenAnimation()
+    {
+        Quaternion startRotation = transform.rotation;
+        Quaternion endRotation = Quaternion.Euler(0, 90, 0);
+        float duration = 1f;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            transform.rotation = Quaternion.Lerp(startRotation, endRotation, elapsed / duration);
+            yield return null;
+        }
+
+        transform.rotation = endRotation;
     }
 }

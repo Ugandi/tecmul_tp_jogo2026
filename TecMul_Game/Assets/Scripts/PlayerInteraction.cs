@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
@@ -14,37 +15,29 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     private void Interact()
-{
-    Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
-    
-    // Mostra no Scene view para onde o ray está a apontar
-    Debug.DrawRay(ray.origin, ray.direction * interactRange, Color.red, 2f);
-
-    if (Physics.Raycast(ray, out RaycastHit hit, interactRange, interactLayer))
     {
-        Debug.Log("Acertou em: " + hit.collider.gameObject.name);
+        Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
 
-        if (hit.collider.TryGetComponent<Door>(out Door door))
+        if (Physics.Raycast(ray, out RaycastHit hit, interactRange, interactLayer))
         {
-            door.TryOpen();
-        }
-
-        if (hit.collider.TryGetComponent<Key>(out Key key))
-        {
-            Door[] allDoors = FindObjectsByType<Door>(FindObjectsSortMode.None);
-            foreach (Door targetDoor in allDoors)
+            Door door = hit.collider.GetComponentInParent<Door>();
+            if (door != null)
             {
-                if (targetDoor.requiredKeyID == key.keyID)
+                door.TryOpen();
+            }
+
+            if (hit.collider.TryGetComponent<Key>(out Key key))
+            {
+                Door[] allDoors = FindObjectsByType<Door>(FindObjectsSortMode.None);
+                foreach (Door targetDoor in allDoors) // "door" renomeado para "targetDoor"
                 {
-                    key.Pickup(targetDoor);
-                    break;
+                    if (targetDoor.requiredKeyID == key.keyID)
+                    {
+                        key.Pickup(targetDoor);
+                        break;
+                    }
                 }
             }
         }
     }
-    else
-    {
-        Debug.Log("Raycast não acertou em nada");
-    }
-}
 }
