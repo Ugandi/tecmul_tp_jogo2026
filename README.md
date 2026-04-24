@@ -9,4 +9,9 @@ Jogabilidade: O objetivo do jogo é escapar da mansão, encontrando chaves para 
 Movimento - WASD
 Correr - Shift Esq.
 Agachar - CTRL
+Interagir - E
 
+Assets importados: Flooded Grounds, ModularFirstPersonController, Gabies_Assets.
+Flooded Grounds - oferece uma grande variedade de assets para construir casas e natureza;
+ModularFirstPersonController - traz os controlos do jogador pré-programados em primeira pessoa (editado);
+Gabies_Assets - assets para as chaves.
