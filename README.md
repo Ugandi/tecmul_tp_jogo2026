@@ -3,7 +3,9 @@
 João Maria Oliveira 33391
 Versão Unity:  6000.3.9f1
 
-Descrição: O jogo consiste em encontrar a chave para cada porta da casa, até finalmente encontrar a chave da porta de saída.
+Descrição: O jogo consiste em encontrar a chave para cada porta da casa, até finalmente encontrar a chave da porta de saída. 
+
+Funcionalidades: O jogador consegue movimentar-se, abrir e fechar portas, correr, agachar, interagir com portas e chaves.
 
 Jogabilidade: O objetivo do jogo é escapar da mansão, encontrando chaves para abrir várias portas até encontrar a chave para sair.
 Movimento - WASD
